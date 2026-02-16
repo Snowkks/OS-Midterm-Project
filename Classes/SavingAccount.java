@@ -1,3 +1,5 @@
+import Interfaces.Interestable;
+
 /*
   This class extends from BankAccount Abstract Class
   This class implement Interestable Interface
@@ -18,7 +20,7 @@ public class SavingAccount extends BankAccount implements Interestable{
      This method calcualte the money amount that this account will get this month
      */
     public double calculateInterest(double amount, double rate){
-
+        return 0.0;
     }
 
     /*
@@ -26,8 +28,8 @@ public class SavingAccount extends BankAccount implements Interestable{
       This methode calculate how many user should save per month to reach the goal
       This method should return amount per month and how many month
      */
-    public double calculateAmountPerMonth(double goal_amount){
-
+    public String calculateAmountPerMonth(double goal_amount){
+        return "10.0 | 12 month";
     }
 
     @Override

@@ -34,7 +34,7 @@ class Transaction{
       | 2026-12-13 | 5 | INPROGRESS | Withdraw | 1000.0 | buy laptop |
      */
     public String toString(){
-
+        return "| date | priority_value | state | type | amount | description |";
     }
 
 }

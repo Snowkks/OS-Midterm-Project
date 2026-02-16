@@ -1,8 +1,10 @@
+import Interfaces.Transferable;
+
 /*
   This class extends from BankAccount Abstract Class
   This class implement Tranferable Interface
  */
-public class PremiumAccount extends BankAccount implements Tranferable{
+public class PremiumAccount extends BankAccount implements Transferable{
 
     private double incountry_fee = 0.0;
     private double international_fee = 0.02;
@@ -22,7 +24,7 @@ public class PremiumAccount extends BankAccount implements Tranferable{
       This method just increase invest_amount by amount and also decrease the balance
      */
     public double invest(double amount){
-
+        return 0.0;
     }
 
     /*
@@ -32,8 +34,8 @@ public class PremiumAccount extends BankAccount implements Tranferable{
            - true is for success
            - false is for failed
      */
-    public boolean tranferInCountry(double amount, double fee){
-
+    public boolean transferInCountry(double amount, double fee){
+        return false;
     }
 
     /*
@@ -43,11 +45,11 @@ public class PremiumAccount extends BankAccount implements Tranferable{
            - true is for success
            - false is for failed
      */
-    public boolean tranferOutsideCountry(double amount, double fee){
-
+    public boolean transferOutsideCountry(double amount, double fee){
+        return false;
     }
 
-    @override
+    @Override
     public String getAccountType(){
         return "Premium";
     }

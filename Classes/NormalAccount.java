@@ -1,9 +1,11 @@
+import Interfaces.Transferable;
+
 
 /*
   This class extends from BankAccount Abstract Class
   This class implement Tranferable Interface
  */
-public class NormalAccount extends BankAccount implements Tranferable{
+public class NormalAccount extends BankAccount implements Transferable{
 
     private double incountry_fee = 0.25;
     private double international_fee = 0.55;
@@ -20,9 +22,10 @@ public class NormalAccount extends BankAccount implements Tranferable{
     /*
       takeOutLoan(double amount)
       This method just increase loan_amount by amount and also increase the balance
+      return amount of loan
      */
     public double takeOutLoan(double amount){
-
+        return 0.0;
     }
 
     /*
@@ -32,8 +35,8 @@ public class NormalAccount extends BankAccount implements Tranferable{
            - true is for success
            - false is for failed
      */
-    public boolean tranferInCountry(double amount, double fee){
-
+    public boolean transferInCountry(double amount, double fee){
+        return false;
     }
 
     /*
@@ -43,8 +46,8 @@ public class NormalAccount extends BankAccount implements Tranferable{
            - true is for success
            - false is for failed
      */
-    public boolean tranferOutsideCountry(double amount, double fee){
-
+    public boolean transferOutsideCountry(double amount, double fee){
+        return false;
     }
 
 

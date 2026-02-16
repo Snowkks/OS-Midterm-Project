@@ -34,7 +34,7 @@ abstract class BankAccount{
            - false is for failed
      */
     public boolean deposit(double amount){
-
+        return false;
     }
 
     /*
@@ -45,7 +45,7 @@ abstract class BankAccount{
            - false is for failed
      */
     public boolean withdraw(double amount){
-
+        return false;
     }
 
     /*
@@ -57,7 +57,7 @@ abstract class BankAccount{
            - false is for transaction can not be perform ( need > balance )
      */
     private boolean validateTransaction(double amount){
-
+        return false;
     }
 
     /*
@@ -68,7 +68,7 @@ abstract class BankAccount{
            - false is for failed
      */
     private boolean updateBalance(double amount){
-
+        return false;
     }
 
     /*
@@ -80,7 +80,7 @@ abstract class BankAccount{
            - false is for failed
      */
     private boolean makeTransaction(){
-
+        return false;
     }
 
     // Abstract Method override in all subclass
