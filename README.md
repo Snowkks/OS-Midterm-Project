@@ -8,7 +8,7 @@
    - [ ] Premium_Account(Bank_Account Inheritance)
    - [ ] Transaction(Class)
    - [ ] Queue_System(Class)
-   - [ ] Interest_Service(Interface for Saving_Account)
-   - [ ] Tranfer_Service(Interface for Normal/Premium Account)
+   - [x] Interestable(Interface for Saving_Account)
+   - [x] Tranferable(Interface for Normal/Premium Account)
    - [ ] BankSystemTest(For Testing a Bank System)
    - [ ] Report
