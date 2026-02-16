@@ -20,7 +20,7 @@ class Transaction{
         this.time_stamp = timestamp;
         this.priority_value = 0;
         this.type = type;
-        this.state = STATE.INPROGESS;
+        this.state = STATE.INPROGRESS;
         this.amount = amount;
         this.description = description;
     }

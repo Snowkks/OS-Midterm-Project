@@ -6,8 +6,8 @@ abstract class BankAccount{
     private String account_number;
 
     private Transaction[] history_list;
-    private history_count = 0;
-    private static final MAX_HISTORY_SIZE = 50;
+    private int history_count = 0;
+    private static final int MAX_HISTORY_SIZE = 50;
 
     // This is constructor
     public BankAccount(String name, String account_number){
@@ -82,4 +82,8 @@ abstract class BankAccount{
     private boolean makeTransaction(){
 
     }
+
+    // Abstract Method override in all subclass
+    public abstract String getAccountType();
+
 }

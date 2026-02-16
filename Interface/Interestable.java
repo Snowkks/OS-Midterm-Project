@@ -1,3 +1,3 @@
 interface Interestable{
-   public double calcualteInterest(double balance, double rate);
+   public double calculateInterest(double balance, double rate);
 }

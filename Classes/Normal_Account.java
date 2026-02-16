@@ -8,7 +8,7 @@ public class NormalAccount extends BankAccount implements Tranferable{
     private double incountry_fee = 0.25;
     private double international_fee = 0.55;
     private double loan_amount;
-    public int credits;
+    private int credits;
 
 
     //This is constructer
@@ -45,6 +45,12 @@ public class NormalAccount extends BankAccount implements Tranferable{
      */
     public boolean tranferOutsideCountry(double amount, double fee){
 
+    }
+
+
+    @Override
+    public String getAccountType() {
+        return "Normal";
     }
 
 }

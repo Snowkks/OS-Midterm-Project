@@ -4,7 +4,7 @@
  */
 public class SavingAccount extends BankAccount implements Interestable{
     private double interest_rate = 0.02;
-    public double goal_amount;
+    private double goal_amount;
 
 
     //This is constructer
@@ -14,9 +14,10 @@ public class SavingAccount extends BankAccount implements Interestable{
     }
 
     /*
+     This method is from Interestable Interface
      This method calcualte the money amount that this account will get this month
      */
-    public double calculateInterest(double amount){
+    public double calculateInterest(double amount, double rate){
 
     }
 
@@ -28,4 +29,10 @@ public class SavingAccount extends BankAccount implements Interestable{
     public double calculateAmountPerMonth(double goal_amount){
 
     }
+
+    @Override
+    public String getAccountType() {
+        return "Saving";
+    }
+
 }

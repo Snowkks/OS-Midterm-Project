@@ -8,11 +8,11 @@ public class PremiumAccount extends BankAccount implements Tranferable{
     private double international_fee = 0.02;
     private double invest_amount;
     private double estimate_profit;
-    public int credits;
+    private int credits;
 
 
     //This is constructer
-    public NormalAccount(String name, String account_number){
+    public PremiumAccount(String name, String account_number){
         super(name, account_number);
         this.credits = 100;
     }
@@ -45,6 +45,11 @@ public class PremiumAccount extends BankAccount implements Tranferable{
      */
     public boolean tranferOutsideCountry(double amount, double fee){
 
+    }
+
+    @override
+    public String getAccountType(){
+        return "Premium";
     }
 
 }
