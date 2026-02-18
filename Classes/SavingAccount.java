@@ -20,7 +20,7 @@ public class SavingAccount extends BankAccount implements Interestable{
      This method calcualte the money amount that this account will get this month
      */
     public double calculateInterest(double amount, double rate){
-        return 0.0;
+        return amount * rate;
     }
 
     /*
@@ -29,7 +29,8 @@ public class SavingAccount extends BankAccount implements Interestable{
       This method should return amount per month and how many month
      */
     public String calculateAmountPerMonth(double goal_amount){
-        return "10.0 | 12 month";
+        double amount_per_month = goal_amount / 12;
+        return amount_per_month + " | 12 month";
     }
 
     @Override
