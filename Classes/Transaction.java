@@ -8,12 +8,12 @@ class Transaction{
         SUCCESS
     }
 
-    public LocalDate time_stamp;
-    public int priority_value;
-    public STATE state;
-    public String type;
-    public double amount;
-    public String description;
+    private LocalDate time_stamp;
+    private int priority_value;
+    private STATE state;
+    private String type;
+    private double amount;
+    private String description;
 
     // This is constructor
     public Transaction(LocalDate timestamp, String type, double amount, String description){
