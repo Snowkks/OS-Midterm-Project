@@ -2,7 +2,7 @@ import java.time.LocalDate;
 
 class Transaction{
 
-    enum STATE{
+    public enum STATE{
         INPROGRESS,
         FAILED,
         SUCCESS
