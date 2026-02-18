@@ -35,6 +35,9 @@ public class PremiumAccount extends BankAccount implements Transferable{
            - false is for failed
      */
     public boolean transferInCountry(double amount, double fee){
+        if(super.withdraw(amount + fee)){
+            return true;
+        }
         return false;
     }
 
@@ -46,6 +49,9 @@ public class PremiumAccount extends BankAccount implements Transferable{
            - false is for failed
      */
     public boolean transferOutsideCountry(double amount, double fee){
+        if(super.withdraw(amount + fee)){
+            return true;
+        }
         return false;
     }
 

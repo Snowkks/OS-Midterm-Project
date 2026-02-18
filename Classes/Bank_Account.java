@@ -23,7 +23,7 @@ abstract class BankAccount{
       This method return the total balance of the account
      */
     public double getBalance(){
-        return balance;
+        return this.balance;
     }
 
     /*
@@ -34,6 +34,10 @@ abstract class BankAccount{
            - false is for failed
      */
     public boolean deposit(double amount){
+        if(amount > 0){
+            this.balance += amount;
+            return true;
+        }
         return false;
     }
 
@@ -45,6 +49,10 @@ abstract class BankAccount{
            - false is for failed
      */
     public boolean withdraw(double amount){
+        if(validateTransaction(amount)){
+            this.balance -= amount;
+            return true;
+        }
         return false;
     }
 
@@ -57,6 +65,9 @@ abstract class BankAccount{
            - false is for transaction can not be perform ( need > balance )
      */
     private boolean validateTransaction(double amount){
+        if(amount <= this.balance){
+            return true;
+        }
         return false;
     }
 
@@ -68,6 +79,10 @@ abstract class BankAccount{
            - false is for failed
      */
     private boolean updateBalance(double amount){
+        if(amount >= 0){
+            this.balance = amount;
+            return true;
+        }
         return false;
     }
 
