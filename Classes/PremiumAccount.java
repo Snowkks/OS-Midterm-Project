@@ -24,6 +24,11 @@ public class PremiumAccount extends BankAccount implements Transferable{
       This method just increase invest_amount by amount and also decrease the balance
      */
     public double invest(double amount){
+        if(super.validateTransaction(amount)){
+            this.invest_amount += amount;
+            super.withdraw(amount);
+            return amount;
+        }
         return 0.0;
     }
 
@@ -35,7 +40,8 @@ public class PremiumAccount extends BankAccount implements Transferable{
            - false is for failed
      */
     public boolean transferInCountry(double amount, double fee){
-        if(super.withdraw(amount + fee)){
+        if (super.validateTransaction(amount)){
+            super.withdraw(amount + fee);
             return true;
         }
         return false;

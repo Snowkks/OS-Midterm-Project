@@ -25,6 +25,11 @@ public class NormalAccount extends BankAccount implements Transferable{
       return amount of loan
      */
     public double takeOutLoan(double amount){
+        if(super.validateTransaction(amount)){
+            this.loan_amount += amount;
+            super.deposit(amount);
+            return amount;
+        }
         return 0.0;
     }
 
