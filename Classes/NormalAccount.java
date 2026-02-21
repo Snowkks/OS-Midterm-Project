@@ -40,8 +40,8 @@ public class NormalAccount extends BankAccount implements Transferable{
            - true is for success
            - false is for failed
      */
-    public boolean transferInCountry(double amount, double fee){
-        if(super.withdraw(amount + fee)){
+    public boolean transferInCountry(double amount){
+        if(super.withdraw(amount + incountry_fee)){
             return true;
         }
         return false;
@@ -54,8 +54,8 @@ public class NormalAccount extends BankAccount implements Transferable{
            - true is for success
            - false is for failed
      */
-    public boolean transferOutsideCountry(double amount, double fee){
-        if(super.withdraw(amount + fee)){
+    public boolean transferOutsideCountry(double amount){
+        if(super.withdraw(amount + international_fee)){
             return true;
         }
         return false;
