@@ -25,6 +25,11 @@ public class NormalAccount extends BankAccount implements Transferable{
       return amount of loan
      */
     public double takeOutLoan(double amount){
+        if(super.validateTransaction(amount)){
+            this.loan_amount += amount;
+            super.deposit(amount);
+            return amount;
+        }
         return 0.0;
     }
 
@@ -35,7 +40,10 @@ public class NormalAccount extends BankAccount implements Transferable{
            - true is for success
            - false is for failed
      */
-    public boolean transferInCountry(double amount, double fee){
+    public boolean transferInCountry(double amount){
+        if(super.withdraw(amount + incountry_fee)){
+            return true;
+        }
         return false;
     }
 
@@ -46,7 +54,10 @@ public class NormalAccount extends BankAccount implements Transferable{
            - true is for success
            - false is for failed
      */
-    public boolean transferOutsideCountry(double amount, double fee){
+    public boolean transferOutsideCountry(double amount){
+        if(super.withdraw(amount + international_fee)){
+            return true;
+        }
         return false;
     }
 

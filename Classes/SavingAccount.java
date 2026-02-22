@@ -19,8 +19,8 @@ public class SavingAccount extends BankAccount implements Interestable{
      This method is from Interestable Interface
      This method calcualte the money amount that this account will get this month
      */
-    public double calculateInterest(double amount, double rate){
-        return amount * rate;
+    public double calculateInterest(double amount){
+        return amount * interest_rate;
     }
 
     /*
