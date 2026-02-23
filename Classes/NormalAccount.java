@@ -41,10 +41,7 @@ public class NormalAccount extends BankAccount implements Transferable{
            - false is for failed
      */
     public boolean transferInCountry(double amount){
-        if(super.withdraw(amount + incountry_fee)){
-            return true;
-        }
-        return false;
+        return super.withdraw(amount + incountry_fee);
     }
 
     /*
@@ -55,10 +52,29 @@ public class NormalAccount extends BankAccount implements Transferable{
            - false is for failed
      */
     public boolean transferOutsideCountry(double amount){
-        if(super.withdraw(amount + international_fee)){
-            return true;
-        }
-        return false;
+        return super.withdraw(amount + international_fee);
+    }
+
+
+
+    /*
+      Generates a ready-to-use Runnable for international transfers
+     */
+    public Runnable createTransferOutsideTask(double amount, String personName) {
+        return () -> {
+            System.out.println("[" + personName + "] Attempting to wire $" + amount + " outside the country...");
+            boolean success = this.transferOutsideCountry(amount);
+            if (!success) System.out.println("[" + personName + "] Transfer FAILED: Insufficient funds.");
+        };
+    }
+
+
+    public Runnable createTransferInsideTask(double amount, String personName) {
+        return () -> {
+            System.out.println("[" + personName + "] Attempting to wire $" + amount + " inside the country...");
+            boolean success = this.transferInCountry(amount);
+            if (!success) System.out.println("[" + personName + "] Transfer FAILED: Insufficient funds.");
+        };
     }
 
 

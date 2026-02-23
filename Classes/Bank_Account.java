@@ -33,8 +33,9 @@ abstract class BankAccount{
            - true is for success
            - false is for failed
      */
-    public boolean deposit(double amount){
+    public synchronized boolean deposit(double amount){
         if(amount > 0){
+            this.makeTransaction("Deposit", amount, "Standard Deposit");
             this.balance += amount;
             return true;
         }
@@ -48,8 +49,9 @@ abstract class BankAccount{
            - true is for success
            - false is for failed
      */
-    public boolean withdraw(double amount){
+    public synchronized boolean withdraw(double amount){
         if(validateTransaction(amount)){
+            this.makeTransaction("Withdraw", amount, "Standard Withdraw");
             this.balance -= amount;
             return true;
         }
@@ -94,14 +96,34 @@ abstract class BankAccount{
            - true is for success
            - false is for failed
      */
-    private boolean makeTransaction(){
+    protected synchronized boolean makeTransaction(String type, double amount, String description){
         if(this.history_count < MAX_HISTORY_SIZE){
-            Transaction new_transaction = new Transaction(java.time.LocalDate.now(), "Deposit", 100.0, "Initial Deposit");
+            Transaction new_transaction = new Transaction(java.time.LocalDate.now(), type, amount, description);
             this.history_list[this.history_count] = new_transaction;
             this.history_count++;
             return true;
         }
         return false;
+    }
+
+     /*
+       Create a Deposit process
+     */
+    public Runnable createDepositTask(double amount, String personName) {
+        return () -> {
+            System.out.println("[" + personName + "] Attempting to deposit $" + amount + "...");
+            this.deposit(amount);
+        };
+    }
+
+     /*
+       Create a Withdraw process
+     */
+    public Runnable createWithdrawTask(double amount, String personName) {
+        return () -> {
+            System.out.println("[" + personName + "] Attempting to withdraw $" + amount + "...");
+            this.withdraw(amount);
+        };
     }
 
     // Abstract Method override in all subclass

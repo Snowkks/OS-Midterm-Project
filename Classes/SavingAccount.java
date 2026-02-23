@@ -30,7 +30,18 @@ public class SavingAccount extends BankAccount implements Interestable{
      */
     public String calculateAmountPerMonth(double goal_amount){
         double amount_per_month = goal_amount / 12;
-        return amount_per_month + " | 12 month";
+        return String.format("%.2f | 12 months", amount_per_month);
+    }
+
+    /*
+      create a interest Process
+     */
+    public Runnable createInterestTask() {
+        return () -> {
+            double interestToApply = this.calculateInterest(this.getBalance());
+            this.deposit(interestToApply);
+            System.out.println("[Scheduler] Applied $" + String.format("%.2f", interestToApply) + " interest. New Balance: $" + this.getBalance());
+        };
     }
 
     @Override
