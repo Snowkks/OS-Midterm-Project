@@ -11,4 +11,15 @@
    - [x] Interestable(Interface for Saving_Account)
    - [x] Tranferable(Interface for Normal/Premium Account)
    - [x] BankSystemTest(For Testing a Bank System)
-   - [ ] Report
+   - [x] Report
+
+## How to Run
+
+   Open your terminal, navigate to the folder containing your project, and compile all the Java files. 
+   ```bash
+   javac Classes/*.java Interfaces/*.java BankSystemTesting.java
+   ```
+   And run with this command
+   ```bash
+   java BankSystemTesing.java
+   ```
