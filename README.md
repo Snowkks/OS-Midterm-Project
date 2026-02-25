@@ -27,6 +27,8 @@
 ## Team Member
 
  - Shutipon Kulsirisongput
+ - Punnathorn Musikphan
+ - Napat Pigulhom
  - 
  - 
  - Puvit Yamsangsung
