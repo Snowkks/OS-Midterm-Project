@@ -1,7 +1,8 @@
 # OS-Midterm-Project
-## A Mideterm Project for ITCS225_Principles of Operating Systems 
+## A Midterm Project for ITCS225_Principles of Operating Systems 
 
 ## TODO
+
    - [x] Bank_Account(Abstract Class)
    - [x] Saving_Account(Bank_Account Inheritance) 
    - [x] Normal_Account(Bank_Account Inheritance) 
@@ -23,9 +24,12 @@
    ```bash
    java BankSystemTesing.java
    ```
-Team Member:
+## Team Member
+
  - Shutipon Kulsirisongput
  - Punnathorn Musikphan
  - Napat Pigulhom
  - 
+ - 
+ - Puvit Yamsangsung
  - 
