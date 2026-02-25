@@ -1,5 +1,5 @@
 # OS-Midterm-Project
-## A Mideterm Project for ITCS225_Principles of Operating Systems 
+## A Midterm Project for ITCS225_Principles of Operating Systems 
 
 ## TODO
    - [x] Bank_Account(Abstract Class)
