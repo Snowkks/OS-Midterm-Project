@@ -1,3 +1,5 @@
+package Classes;
+
 import Interfaces.Interestable;
 
 /*
@@ -24,9 +26,7 @@ public class SavingAccount extends BankAccount implements Interestable{
     }
 
     /*
-      calculateAmountPerMonth(double goal_amount)
       This methode calculate how many user should save per month to reach the goal
-      This method should return amount per month and how many month
      */
     public String calculateAmountPerMonth(double goal_amount){
         double amount_per_month = goal_amount / 12;

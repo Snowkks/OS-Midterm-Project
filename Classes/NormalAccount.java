@@ -1,5 +1,6 @@
-import Interfaces.Transferable;
+package Classes;
 
+import Interfaces.Transferable;
 
 /*
   This class extends from BankAccount Abstract Class
@@ -20,9 +21,7 @@ public class NormalAccount extends BankAccount implements Transferable{
     }
 
     /*
-      takeOutLoan(double amount)
       This method just increase loan_amount by amount and also increase the balance
-      return amount of loan
      */
     public double takeOutLoan(double amount){
         if(super.validateTransaction(amount)){
@@ -36,9 +35,6 @@ public class NormalAccount extends BankAccount implements Transferable{
     /*
       This method is from Transferable
       This method should decrease balance by amount with incountry_fee
-      This method must return true or false
-           - true is for success
-           - false is for failed
      */
     public boolean transferInCountry(double amount){
         return super.withdraw(amount + incountry_fee);
@@ -47,19 +43,12 @@ public class NormalAccount extends BankAccount implements Transferable{
     /*
       This method is from Transferable
       This method should decrease balance by amount with international_fee
-      This method must return true or false
-           - true is for success
-           - false is for failed
      */
     public boolean transferOutsideCountry(double amount){
         return super.withdraw(amount + international_fee);
     }
 
-
-
-    /*
-      Generates a ready-to-use Runnable for international transfers
-     */
+    // Create a Transfer Outside country process
     public Runnable createTransferOutsideTask(double amount, String personName) {
         return () -> {
             System.out.println("[" + personName + "] Attempting to wire $" + amount + " outside the country...");
@@ -69,6 +58,7 @@ public class NormalAccount extends BankAccount implements Transferable{
     }
 
 
+    // Create a Transfer Inside country process
     public Runnable createTransferInsideTask(double amount, String personName) {
         return () -> {
             System.out.println("[" + personName + "] Attempting to wire $" + amount + " inside the country...");
@@ -77,10 +67,8 @@ public class NormalAccount extends BankAccount implements Transferable{
         };
     }
 
-
     @Override
     public String getAccountType() {
         return "Normal";
     }
-
 }

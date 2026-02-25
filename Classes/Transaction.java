@@ -1,3 +1,5 @@
+package Classes;
+
 import java.time.LocalDate;
 
 class Transaction{
@@ -25,16 +27,20 @@ class Transaction{
         this.description = description;
     }
 
-
     /*
-      toString()
       This method must return string that include all the info of the transaction
       Example:
       | date | priority_value | state | type | amount | description |
-      | 2026-12-13 | 5 | INPROGRESS | Withdraw | 1000.0 | buy laptop |
      */
     public String toString(){
-        return "| " + this.time_stamp + " | " + this.priority_value + " | " + this.state + " | " + this.type + " | " + this.amount + " | " + this.description + " |";
+        StringBuilder sb = new StringBuilder();
+        sb.append("| ").append(this.time_stamp)
+            .append(" | ").append(this.priority_value)
+            .append(" | ").append(this.state)
+            .append(" | ").append(this.type)
+            .append(" | ").append(this.amount)
+            .append(" | ").append(this.description).append(" |");
+        return sb.toString();
     }
 
 }

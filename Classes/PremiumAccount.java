@@ -1,3 +1,5 @@
+package Classes;
+
 import Interfaces.Transferable;
 
 /*
@@ -12,7 +14,6 @@ public class PremiumAccount extends BankAccount implements Transferable{
     private double estimate_profit;
     private int credits;
 
-
     //This is constructer
     public PremiumAccount(String name, String account_number){
         super(name, account_number);
@@ -20,7 +21,6 @@ public class PremiumAccount extends BankAccount implements Transferable{
     }
 
     /*
-      takeOutLoan(double amount)
       This method just increase invest_amount by amount and also decrease the balance
      */
     public double invest(double amount){
@@ -35,9 +35,6 @@ public class PremiumAccount extends BankAccount implements Transferable{
     /*
       This method is from Transferable
       This method should decrease balance by amount with incountry_fee
-      This method must return true or false
-           - true is for success
-           - false is for failed
      */
     public boolean transferInCountry(double amount){
         return super.withdraw(amount + incountry_fee);
@@ -46,14 +43,10 @@ public class PremiumAccount extends BankAccount implements Transferable{
     /*
       This method is from Transferable
       This method should decrease balance by amount with international_fee
-      This method must return true or false
-           - true is for success
-           - false is for failed
      */
     public boolean transferOutsideCountry(double amount){
         return super.withdraw(amount + international_fee);
     }
-
 
      /*
        Create a Transferoutside process
@@ -65,7 +58,6 @@ public class PremiumAccount extends BankAccount implements Transferable{
             if (!success) System.out.println("[" + personName + "] Transfer FAILED: Insufficient funds.");
         };
     }
-
 
      /*
        Create a Transferinside process
@@ -82,5 +74,4 @@ public class PremiumAccount extends BankAccount implements Transferable{
     public String getAccountType(){
         return "Premium";
     }
-
 }
